@@ -10,10 +10,11 @@ Plug 'https://github.com/jiangmiao/auto-pairs.git'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'https://github.com/sjl/gundo.vim.git'
 " Plug 'https://github.com/davidhalter/jedi-vim.git'
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'zchee/deoplete-jedi'
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'roxma/nvim-yarp'
+" Plug 'roxma/vim-hug-neovim-rpc'
+" Plug 'zchee/deoplete-jedi'
+Plug 'roxma/nvim-completion-manager'
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
 Plug 'https://github.com/ervandew/supertab.git'
@@ -57,7 +58,8 @@ colorscheme molokai  " Setting your favorate color scheme such as desert
 filetype plugin indent on
 
 " TAB Settings ---------------------------------------------------------
-autocmd FileType python,vim setlocal expandtab softtabstop=4
+autocmd FileType python,vim,markdown setlocal expandtab softtabstop=4
+autocmd FileType javascript,html,css setlocal expandtab softtabstop=2
 set smarttab
 "set expandtab
 set tabstop=4
