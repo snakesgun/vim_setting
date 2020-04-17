@@ -134,7 +134,9 @@ nmap <leader>gt :GundoToggle<cr>
 " Vim-Jedi Settings -----------------------------------------------------
 let g:jedi#popup_select_first = 0
 autocmd FileType python setlocal completeopt-=preview
-"Choose your python version
+
+" Enable deoplete completion at startup
+let g:deoplete#enable_at_startup = 1
 
 " SuperTab Settings -----------------------------------------------------
 let g:SuperTabDefaultCompletionType = "<c-n>"
