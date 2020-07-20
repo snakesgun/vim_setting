@@ -1,3 +1,4 @@
+
 " Vim-plug Section ------------------------------------------------------
 " vim-plug on -----------------------------------------------------------
 call plug#begin()
@@ -9,7 +10,7 @@ call plug#begin()
 " editor functions
 Plug 'https://github.com/scrooloose/nerdcommenter.git'
 Plug 'https://github.com/scrooloose/nerdtree.git'
-" Plug 'https://github.com/ervandew/supertab.git'
+Plug 'https://github.com/ervandew/supertab.git'
 Plug 'https://github.com/godlygeek/tabular.git'
 Plug 'https://github.com/vim-scripts/DeleteTrailingWhitespace.git'
 Plug 'https://github.com/vim-scripts/ShowTrailingWhitespace.git'
@@ -31,6 +32,7 @@ Plug 'dracula/vim'
 "" Global
 Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "" Python
 Plug 'Vimjas/vim-python-pep8-indent'
@@ -58,6 +60,7 @@ syntax on
 " Basic Environment ----------------------------------------------------
 set ru
 set nocp
+set lcs+=space:.
 set is
 set nu
 set encoding=utf-8
@@ -66,7 +69,7 @@ set whichwrap=b,s,<,>,[,]
 set cursorline
 set nobackup
 set autochdir
-set guifont=CaskaydiaCove\ NF:h12
+set guifont=CaskaydiaCove\ NF:h14
 colorscheme dracula  " Setting your favorate color scheme such as desert
 filetype plugin indent on
 
@@ -118,7 +121,7 @@ let g:gundo_prefer_python3=1
 
 
 " SuperTab Settings -----------------------------------------------------
-" let g:SuperTabDefaultCompletionType = "<c-n>"
+ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 
 " DeleteTrailingWhiteSpace
@@ -143,10 +146,15 @@ let g:vista#renderer#enable_icon = 1
 
 
 " ale
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_linters = {
+\   'python': [],
+\}
 let g:ale_fixers = {
-    \    'python': ['yapf'],
+    \    'python': ['autopep8', 'add_blank_lines_for_python_control_statements', 'isort'],
     \}
+" Do not lint or fix minified files.
+let g:ale_pattern_options = {
+    \ '\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
+    \ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
+\}
 let g:ale_fix_on_save = 1
