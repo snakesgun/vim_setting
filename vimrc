@@ -1,4 +1,3 @@
-
 " Vim-plug Section ------------------------------------------------------
 " vim-plug on -----------------------------------------------------------
 call plug#begin()
@@ -69,7 +68,7 @@ set whichwrap=b,s,<,>,[,]
 set cursorline
 set nobackup
 set autochdir
-set guifont=CaskaydiaCove\ NF:h14
+set guifont=CaskaydiaCove\ NF:h12
 colorscheme dracula  " Setting your favorate color scheme such as desert
 filetype plugin indent on
 
@@ -121,7 +120,7 @@ let g:gundo_prefer_python3=1
 
 
 " SuperTab Settings -----------------------------------------------------
- let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 
 " DeleteTrailingWhiteSpace
@@ -158,3 +157,7 @@ let g:ale_pattern_options = {
     \ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
 \}
 let g:ale_fix_on_save = 1
+
+
+" Coc
+nmap <F12> <Plug>(coc-definition)
