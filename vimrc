@@ -21,6 +21,7 @@ Plug 'https://github.com/sjl/gundo.vim.git'
 Plug 'https://github.com/kien/ctrlp.vim.git'
 Plug 'ryanoasis/vim-devicons'
 Plug 'liuchengxu/vista.vim'
+Plug 'luochen1990/rainbow'
 
 " editor apperence
 Plug 'https://github.com/bling/vim-airline.git'
@@ -55,6 +56,7 @@ if (has("termguicolors"))
     set termguicolors
 endif
 syntax on
+let g:rainbow_active = 1
 
 " Basic Environment ----------------------------------------------------
 set ru
