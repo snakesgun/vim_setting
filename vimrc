@@ -32,7 +32,10 @@ Plug 'dracula/vim'
 "" Global
 Plug 'sheerun/vim-polyglot'
 Plug 'dense-analysis/ale'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
 
 "" Python
 Plug 'Vimjas/vim-python-pep8-indent'
@@ -70,7 +73,7 @@ set whichwrap=b,s,<,>,[,]
 set cursorline
 set nobackup
 set autochdir
-set guifont=CaskaydiaCove\ NF:h12
+set guifont=CaskaydiaCove\ Nerd\ Font:h12
 colorscheme dracula  " Setting your favorate color scheme such as desert
 filetype plugin indent on
 
@@ -95,9 +98,22 @@ let g:airline#extensions#ale#enabled = 1
 "You need install powerline fonts to turn on this option
 
 " If you like airline tabline, you can use following option
-"let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#buffer_nr_show = 1
-"let g:airline#extensions#tabline#buffer_nr_format = '%s:'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_nr_format = '%s:'
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>0 <Plug>AirlineSelectTab0
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
 
 
 " NERDTree Settings ----------------------------------------------------
@@ -131,24 +147,25 @@ let g:DeleteTrailingWhitespace_Action = 'delete'
 
 
 " Vista
-function! NearestMethodOrFunction() abort
-  return get(b:, 'vista_nearest_method_or_function', '')
-endfunction
+"function! NearestMethodOrFunction() abort
+  "return get(b:, 'vista_nearest_method_or_function', '')
+"endfunction
 
-set statusline+=%{NearestMethodOrFunction()}
+"set statusline+=%{NearestMethodOrFunction()}
 
 " By default vista.vim never run if you don't call it explicitly.
 "
 " If you want to show the nearest function in your statusline automatically,
 " you can add the following line to your vimrc
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista#renderer#enable_icon = 1
+"autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+"let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+"let g:vista#renderer#enable_icon = 1
 
 
 " ale
 let g:ale_linters = {
-\   'python': [],
+\   'python': ['pydocstyle', 'pyright'],
+\   'markdown': ['remark_lint'],
 \}
 let g:ale_fixers = {
     \    'python': ['autopep8', 'add_blank_lines_for_python_control_statements', 'isort'],
@@ -158,8 +175,21 @@ let g:ale_pattern_options = {
     \ '\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
     \ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
 \}
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+nmap <leader>gd :ALEGoToDefinition<cr>
 
 
-" Coc
-nmap <F12> <Plug>(coc-definition)
+" vim-lsp-settings
+"
+let g:lsp_settings_root_markers = [
+\   '.git',
+\   '.git/',
+\   '.svn',
+\   '.hg',
+\   '.bzr',
+\   '.python-version'
+\ ]
+
+" Markdown Settings
+let g:vim_markdown_folding_disabled = 1
