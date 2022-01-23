@@ -16,12 +16,14 @@ Plug 'https://github.com/vim-scripts/ShowTrailingWhitespace.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/terryma/vim-multiple-cursors.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
-" Plug 'https://github.com/majutsushi/tagbar.git'
-Plug 'https://github.com/sjl/gundo.vim.git'
-Plug 'https://github.com/kien/ctrlp.vim.git'
+if (has("Python3"))
+    Plug 'https://github.com/sjl/gundo.vim.git'
+endif
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'liuchengxu/vista.vim'
 Plug 'luochen1990/rainbow'
+Plug 'skywind3000/asyncrun.vim'
 
 " Snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -29,9 +31,11 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'rafamadriz/friendly-snippets', {'branch': 'main'}
 
 " editor apperence
-Plug 'https://github.com/bling/vim-airline.git'
-Plug 'https://github.com/vim-airline/vim-airline-themes.git'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'dracula/vim'
+Plug 'markvincze/panda-vim'
+Plug 'sainnhe/edge'
 
 " programming language
 "" Global
@@ -103,6 +107,7 @@ let g:airline#extensions#ale#enabled = 1
 "You need install powerline fonts to turn on this option
 
 " If you like airline tabline, you can use following option
+let g:airline#extensions#tabline#show_close_button = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#buffer_nr_format = '%s:'
