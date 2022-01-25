@@ -36,6 +36,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'dracula/vim'
 Plug 'markvincze/panda-vim'
 Plug 'sainnhe/edge'
+Plug 'mhinz/vim-startify'
 
 " programming language
 "" Global

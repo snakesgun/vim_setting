@@ -24,6 +24,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'liuchengxu/vista.vim'
 Plug 'luochen1990/rainbow'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'mhinz/vim-startify'
 
 " Snippets
 Plug 'hrsh7th/vim-vsnip'
