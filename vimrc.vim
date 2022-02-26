@@ -25,6 +25,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'luochen1990/rainbow'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'mhinz/vim-startify'
+Plug 'easymotion/vim-easymotion'
 
 " Snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -74,6 +75,7 @@ let g:rainbow_active = 1
 " Basic Environment ----------------------------------------------------
 set ru
 set nocp
+set guioptions=
 set lcs+=space:.
 set is
 set nu
@@ -83,9 +85,13 @@ set whichwrap=b,s,<,>,[,]
 set cursorline
 set nobackup
 set autochdir
+set sb
+set spr
 set guifont=CaskaydiaCove\ Nerd\ Font:h12
+set guioptions-=Lr
 colorscheme dracula  " Setting your favorate color scheme such as desert
 filetype plugin indent on
+set termwinsize=15*0
 
 
 " TAB Settings ---------------------------------------------------------
