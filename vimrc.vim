@@ -21,6 +21,7 @@ if (has("Python3"))
 endif
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'liuchengxu/vista.vim'
 Plug 'luochen1990/rainbow'
 Plug 'skywind3000/asyncrun.vim'
@@ -137,6 +138,7 @@ nmap <leader>+ <Plug>AirlineSelectNextTab
 nmap <leader>nt :NERDTreeToggle<cr>
 " Automaticaly close nvim if NERDTree is only thing left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeIgnore=['\.DS_Store$', '\.git$', '\.idea$', '\.vscode$', '\.history$']
 
 
 " Tagbar Settings ------------------------------------------------------

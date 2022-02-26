@@ -21,9 +21,12 @@ if (has("Python3"))
 endif
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'liuchengxu/vista.vim'
 Plug 'luochen1990/rainbow'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'mhinz/vim-startify'
+Plug 'easymotion/vim-easymotion'
 
 " Snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -36,7 +39,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'dracula/vim'
 Plug 'markvincze/panda-vim'
 Plug 'sainnhe/edge'
-Plug 'mhinz/vim-startify'
 
 " programming language
 "" Global
