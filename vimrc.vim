@@ -207,7 +207,8 @@ let g:lsp_settings_root_markers = [
 \   '.svn',
 \   '.hg',
 \   '.bzr',
-\   '.python-version'
+\   '.python-version',
+\   '.pyrightconfig.json'
 \ ]
 
 " Markdown Settings
