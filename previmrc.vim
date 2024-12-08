@@ -16,9 +16,7 @@ Plug 'https://github.com/vim-scripts/ShowTrailingWhitespace.git'
 Plug 'https://github.com/Yggdroot/indentLine.git'
 Plug 'https://github.com/terryma/vim-multiple-cursors.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
-if (has("Python3"))
-    Plug 'https://github.com/sjl/gundo.vim.git'
-endif
+Plug 'mbbill/undotree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
