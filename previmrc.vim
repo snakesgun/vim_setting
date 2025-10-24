@@ -35,8 +35,10 @@ Plug 'rafamadriz/friendly-snippets', {'branch': 'main'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dracula/vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'markvincze/panda-vim'
 Plug 'sainnhe/edge'
+Plug 'snakesgun/auto-dark-mode.vim'
 
 " programming language
 "" Global

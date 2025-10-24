@@ -35,8 +35,10 @@ Plug 'rafamadriz/friendly-snippets', {'branch': 'main'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'dracula/vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 Plug 'markvincze/panda-vim'
 Plug 'sainnhe/edge'
+Plug 'snakesgun/auto-dark-mode.vim'
 
 " programming language
 "" Global
@@ -88,7 +90,9 @@ set sb
 set spr
 set guifont=CaskaydiaCove\ Nerd\ Font:h12
 set guioptions-=Lr
-colorscheme dracula  " Setting your favorate color scheme such as desert
+let g:auto_dark_theme = 'catppuccin_mocha'
+let g:auto_light_theme = 'catppuccin_latte'
+colorscheme catppuccin_latte  " Setting your favorate color scheme such as desert
 filetype plugin indent on
 set termwinsize=15*0
 
@@ -106,6 +110,8 @@ set shiftwidth=4
 
 " Vim-airline Settings -------------------------------------------------
 let g:airline_powerline_fonts=1
+let g:auto_light_airline_theme="catppuccin_latte"
+let g:auto_dark_airline_theme="catppuccin_mocha"
 let g:airline_theme="bubblegum"
 set laststatus=2
 let g:airline#extensions#ale#enabled = 1
